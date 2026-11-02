@@ -1,0 +1,469 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Evita el espacio blanco a la derecha */
+    width: 100%;
+}
+
+body {
+    font-family: Tahoma;
+    overflow-x: hidden; /* Evita el espacio blanco a la derecha */
+    width: 100%;
+}
+header{
+    width: 100%;
+    height: 75px;
+    background: darkslategray;
+    position: fixed;
+    z-index: 100000;
+    top: 0;
+    left: 0;
+}
+.container{
+    width: 95%;
+    margin: auto;
+}
+#logo{
+    float: left;
+}
+.botonera{
+    float: right;
+}
+.botonera ul{
+    display: flex;
+    list-style: none;
+}
+.botonera a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 20px;
+}
+/*Estilos para el banner*/
+.banner{
+    position: relative;
+    background:url(../img/1283574.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 90vh;
+}
+.cont-banner{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+.cont-banner h1{
+    text-align: center;
+    margin-bottom: 10px;
+   
+}
+
+p{
+    font-size: 18px;
+    line-height: 30px;
+}
+.banner-perfil{
+    display: block;
+    margin: 0 auto;
+    margin-top: -300px;
+    margin-bottom: -10px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+
+}
+main{
+    width: 80%;
+    margin: 20px auto;
+
+}
+.linea{
+    width: 40%;
+    margin: 20px auto 20px 0;
+
+}
+/* Sección Portafolio */
+.seccion-portafolio {
+    width: 80%;               /* Mismo ancho de alineación que tu etiqueta main */
+    margin: 80px auto;        /* Margen superior e inferior para separar secciones */
+    text-align: center;
+}
+
+.seccion-portafolio h2 {
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/* Rejilla de 4 columnas idénticas y ordenadas */
+.portafolio-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;                /* Separación exacta entre recuadros */
+    margin-top: 40px;
+    width: 100%;
+}
+
+/* Caja del ítem con proporción fija de pantalla */
+.portafolio-item {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;     /* Fuerza la proporción rectangular de monitor */
+    overflow: hidden;         /* Recorta cualquier exceso de imagen */
+    border-radius: 4px;       /* Bordes ligeramente suaves como la muestra */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background-color: #f0f0f0;/* Fondo gris por si una imagen tarda en cargar */
+}
+
+/* Comportamiento de la imagen dentro del recuadro */
+.portafolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        /* Llena el espacio sin deformarse ni estirarse */
+    display: block;
+}
+
+/* Mediaqueries para que no se rompa el orden en pantallas pequeñas */
+@media only screen and (max-width: 1024px) {
+    .portafolio-grid {
+        grid-template-columns: repeat(2, 1fr); /* Pasa a 2 columnas en pantallas medianas */
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .portafolio-grid {
+        grid-template-columns: 1fr;            /* 1 columna en celulares */
+    }
+}
+/* Contenedor principal con el fondo rojo oscuro */
+.fondo-testimonios {
+    background-color: #2c3e50; /* Color vino/rojo oscuro de la captura */
+    padding: 80px 0;
+    width: 100%;
+    color: white;
+}
+
+.contenedor-testimonios {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Título de la sección en amarillo */
+.contenedor-testimonios h2 {
+    color: #ffcc00; /* Título amarillo */
+    font-size: 32px;
+    margin-bottom: 50px;
+    font-weight: normal;
+}
+
+/* Rejilla de 3 columnas proporcionales */
+.testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px; /* Separación horizontal entre columnas */
+}
+
+/* Estilo para cada tarjeta individual */
+.testimonio-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Envoltura para forzar que las fotos sean círculos perfectos */
+.avatar-wrapper {
+    width: 220px;       /* Tamaño proporcional intermedio idéntico a la foto */
+    height: 220px;
+    border-radius: 50%;
+    border: 5px solid #ffcc00; /* Borde amarillo grueso */
+    overflow: hidden;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que las caras se deformen */
+    display: block;
+}
+
+/* Nombres de los clientes */
+.testimonio-item h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Textos de los testimonios */
+.testimonio-item p {
+    font-size: 16px;
+    line-height: 26px;
+    color: #e0e0e0; /* Color gris claro/blanco sutil para legibilidad */
+}
+
+/* Adaptabilidad móvil (Responsive) */
+@media only screen and (max-width: 980px) {
+    /* Fuerza al bloque rojo a expandirse al 100% de la pantalla */
+    .fondo-testimonios {
+        width: 100% !important;
+        padding: 50px 0;
+    }
+
+    /* Amplía el espacio interno para que el texto y las tarjetas aprovechen el ancho */
+    .contenedor-testimonios {
+        width: 90% !important;
+    }
+
+    /* Pone las tarjetas en una sola fila vertical perfecta */
+    .testimonios-grid {
+        grid-template-columns: 1fr; 
+        gap: 60px; /* Espaciado generoso entre cada testimonio */
+        width: 100%;
+    }
+
+    /* Ajusta el tamaño de las fotos para pantallas pequeñas sin perder proporción */
+    .avatar-wrapper {
+        width: 180px; 
+        height: 180px;
+        margin-bottom: 15px;
+    }
+
+    /* Controla que el texto largo no desborde los márgenes */
+    .testimonio-item p {
+        font-size: 15px;
+        padding: 0 10px;
+    }
+}
+/* Estilos Base de la Sección Contacto */
+.seccion-contacto {
+    width: 100%;
+    background-color: #f9f9f9; /* Fondo claro sutil detrás de la estructura */
+    padding: 80px 0;
+}
+/* Título de la sección alineado con el estilo general */
+.seccion-contacto .titulo-seccion {
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Fuerza a la línea divisoria a centrarse en esta sección */
+.seccion-contacto .linea {
+    margin: 20px auto 40px auto; 
+    width: 40%;
+}
+.contacto-container {
+    width: 80%; /* Alineación perfecta con el resto de tus secciones */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* La columna de la imagen es ligeramente más ancha */
+    gap: 40px;
+    align-items: start;
+}
+
+/* Columna de la Imagen */
+.contacto-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Columna del Formulario */
+.contacto-formulario {
+    background-color: white;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.contacto-formulario h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.subtitulo-formulario {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Campos de entrada de datos (Inputs) */
+.grupo-campo {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.grupo-campo label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+.grupo-campo input,
+.grupo-campo textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ffcc00; /* Borde amarillo como se aprecia en tu captura */
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.grupo-campo input:focus,
+.grupo-campo textarea:focus {
+    box-shadow: 0 0 5px rgba(255, 204, 0, 0.5);
+}
+
+/* Botón Enviar Amarillo */
+.btn-enviar {
+    background-color: #ffcc00; /* Color amarillo corporativo de tu muestra */
+    color: #333;
+    border: none;
+    padding: 12px 40px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.btn-enviar:hover {
+    background-color: #e6b800; /* Oscurece sutilmente al pasar el mouse */
+}
+
+/* Adaptabilidad para Dispositivos Móviles */
+@media only screen and (max-width: 980px) {
+    .contacto-container {
+        grid-template-columns: 1fr; /* Cambia a una sola columna vertical */
+        width: 90%;
+        gap: 30px;
+    }
+    
+    .contacto-imagen {
+        order: 2; /* Pasa la imagen abajo en celulares para priorizar el formulario */
+    }
+    
+    .contacto-formulario {
+        order: 1;
+    }
+}
+/* ==========================================
+   ESTILOS COMPLETOS DEL PIE DE PÁGINA (FOOTER)
+   ========================================== */
+.pie-pagina {
+    background-color: #2a2a2a; /* Color plomo oscuro idéntico a la muestra corporativa */
+    padding: 25px 0;           /* Espaciado interno superior e inferior */
+    width: 100%;
+    text-align: center;        /* Centra el texto en el medio de la pantalla */
+    border-top: 1px solid #3d3d3d; /* Línea divisoria muy sutil en la parte superior */
+}
+
+.pie-pagina p {
+    color: #ffffff;            /* Texto blanco limpio */
+    font-size: 14px;           /* Tamaño de fuente estilizado para pies de página */
+    letter-spacing: 0.5px;     /* Separación sutil entre letras */
+    margin: 0;
+}
+
+/* Ajuste responsivo para celulares */
+@media only screen and (max-width: 600px) {
+    .pie-pagina p {
+        font-size: 12px;       /* Reduce el tamaño del texto en pantallas pequeñas para que no se rompa */
+        padding: 0 15px;       /* Evita que toque los bordes físicos del celular */
+        line-height: 20px;
+    }
+}
+/* ==========================================
+   BARRA DE REDES SOCIALES FLOTANTE (IZQUIERDA)
+   ========================================== */
+.redes-flotantes {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%); /* Centra la barra verticalmente en la pantalla */
+    z-index: 999999;             /* Se asegura de estar por encima de los fondos */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo base para cada botón */
+.btn-red {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 40px;
+    color: white !important;     /* Fuerza a los iconos a ser blancos */
+    font-size: 20px;
+    text-decoration: none;
+    transition: transform 0.3s ease, padding-left 0.3s ease;
+    border-radius: 0 4px 4px 0;  /* Curva solo las esquinas del lado derecho */
+    margin-bottom: 2px;          /* Separación milimétrica entre botones */
+}
+
+/* Colores corporativos exactos de la captura */
+.facebook { background-color: #3b5998; }
+.youtube  { background-color: #ff0000; }
+.twitter  { background-color: #00acee; }
+.instagram { background-color: #ea4c89; }
+
+/* EFECTO HOVER: Sobresale hacia la derecha al poner el cursor */
+.btn-red:hover {
+    transform: translateX(8px); /* Desplaza el botón hacia afuera */
+    padding-left: 5px;          /* Agrega un extra de movimiento visual */
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Ocultar en dispositivos móviles para no estorbar la lectura del texto */
+@media only screen and (max-width: 768px) {
+    .redes-flotantes {
+        display: none;
+    }
+}
+/* Corrección del banner para móviles */
+@media only screen and (max-width: 768px) {
+    .banner {
+        min-height: auto;
+        padding: 100px 0 40px 0; /* Espacio para que no lo tape el header fijo */
+    }
+
+    .cont-banner {
+        position: relative; /* Cambia de absolute a relative para fluir de forma natural */
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .banner-perfil {
+        margin-top: 0; /* Elimina el margen negativo que deforma el contenedor */
+        margin-bottom: 20px;
+        width: 180px;  /* Tamaño más adecuado para la pantalla de un celular */
+        height: 180px;
+    }
+}

@@ -1,0 +1,60 @@
+.fondo-parallax{
+    background: url(../img/thumb-1920-1040825.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 60px 0px;
+    position: relative;
+}
+.parallax{
+    width: 80%;
+    margin: auto;
+    color: white;
+}
+.services-grid.top-row {
+    display: grid; /* <-- ESTA LÍNEA FALTABA: Activa el sistema de rejilla */
+    grid-template-columns: repeat(5, 1fr); /* Divide en 5 columnas iguales */
+    gap: 30px; /* Espacio de separación entre cada tarjeta de servicio */
+}
+
+/* Tarjeta individual de cada servicio */
+.service-item {
+    text-align: center;
+}
+.parallax h2 {
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    width: 100%;            /* Obliga al título a ocupar todo el ancho disponible */
+    text-align: center;     /* Asegura el centrado del texto */
+    
+    display: flex;          /* Activa el diseño flexible para controlar las líneas */
+    align-items: center;    /* Centra las líneas verticalmente respecto al texto */
+    justify-content: center;/* Centra todo el conjunto horizontalmente */
+}
+@media only screen and (max-width: 980px) {
+    /* Cambia de 5 columnas a 2 columnas en tablets */
+    .services-grid.top-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    /* Cambia a 1 sola columna perfecta en celulares */
+    .services-grid.top-row {
+        grid-template-columns: 1fr;
+        gap: 35px; /* Espacio cómodo entre cada tarjeta */
+    }
+
+    /* Opcional: Centra un poco más el contenido de los bloques */
+    .service-item {
+        padding: 0 10px;
+    }
+    
+    .service-item p {
+        font-size: 16px; /* Tamaño de letra más legible para celular */
+        line-height: 24px;
+    }
+}
